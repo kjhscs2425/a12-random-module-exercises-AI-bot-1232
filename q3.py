@@ -1,14 +1,23 @@
+import random
+
 suits = "♠♥♣♦"
 values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
-deck = []
 # Make a deck of cards
-# `deck` should be a list of strings with a value and a suit, e.g. "4♣"
-#YOUR CODE HERE
+deck = []
+for suit in suits:
+    for value in values:
+        deck.append(value + suit)
 
-#shuffle your `deck` and print it out
-#YOUR CODE HERE
+# Shuffle the deck
+random.shuffle(deck)
 
-# sample a hand of 5 cards and print it out
-# (WITHOUT replacement -- no repeats!)
-#YOUR CODE HERE
+# Sample a hand of 5 cards (without replacement)
+hand = random.sample(deck, 5)
+
+# Print the shuffled deck and the hand
+print("Shuffled Deck:")
+print(deck)
+
+print("\nHand:")
+print(hand)
